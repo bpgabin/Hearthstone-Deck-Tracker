@@ -1,4 +1,4 @@
-﻿#region
+#region
 
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -100,6 +100,7 @@ namespace Hearthstone_Deck_Tracker.Hearthstone
 		public IEnumerable<Card> PredictedCardsInDeck => InDeckPrecitions.Select(x =>
 		{
 			var card = Database.GetCardFromId(x.CardId);
+			card.Count = x.Count;
 			card.Jousted = true;
 			return card;
 		});
@@ -186,6 +187,7 @@ namespace Hearthstone_Deck_Tracker.Hearthstone
 								}).Concat(InDeckPrecitions.Select(x =>
 								{
 									var card = Database.GetCardFromId(x.CardId);
+									card.Count = x.Count;
 									card.Jousted = true;
 									return card;
 								})).ToSortedCardList();
