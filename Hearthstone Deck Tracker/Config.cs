@@ -371,8 +371,8 @@ namespace Hearthstone_Deck_Tracker
 		//move this to some data file
 		public int[] GoldProgressTotal = {0, 0, 0, 0, 0};
 
-		[DefaultValue(true)]
-		public bool GoogleAnalytics = true;
+		[DefaultValue(false)]
+		public bool GoogleAnalytics = false;
 
 		[DefaultValue(@"C:\Program Files (x86)\Hearthstone")]
 		public string HearthstoneDirectory = @"C:\Program Files (x86)\Hearthstone";
